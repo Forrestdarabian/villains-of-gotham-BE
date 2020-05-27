@@ -42,7 +42,7 @@ router.get("/:id", (req, res) => {
 
 //POST Request
 router.post("/", (req, res) => {
-  const { boss, secondInCommand, brute, henchman, thug } = req.body;
+  const { boss, secondInCommand, brute, henchman, thug, username } = req.body;
   squads
     .insert(req.body)
     .then((item) => {
@@ -65,8 +65,8 @@ router.post("/", (req, res) => {
 //PUT Request
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  const { boss, secondInCommand, brute, henchman, thug } = req.body;
-  if (boss && secondInCommand && brute && henchman && thug) {
+  const { boss, secondInCommand, brute, henchman, thug, username } = req.body;
+  if (boss && secondInCommand && brute && henchman && thug && username) {
     squads
       .update(id, req.body)
       .then((updateditem) => {

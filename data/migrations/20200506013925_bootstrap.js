@@ -12,6 +12,7 @@ exports.up = function (knex) {
       tbl.string("brute", 255).notNullable();
       tbl.string("henchman").notNullable();
       tbl.string("thug", 255).notNullable();
+      tbl.string("username").notNullable();
     });
 };
 
